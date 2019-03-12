@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pixelfed Debug</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous" />
+	<style type="text/css">
+		body {
+			padding-top: 2rem;
+		}
+	</style>
+</head>
+<body id="app">
+	<div class="container">
+		
+		<nav class="navbar navbar-light px-0">
+			<a class="navbar-brand font-weight-bold" href="/">
+				<img src="/assets/pixelfed-icon-color.svg" width="30" height="30" class="d-inline-block align-top mr-2" alt="">
+				Pixelfed
+			</a>
+		</nav>
+		<p class="display-4 my-2">Debug Page</p>
+
+		<p class="lead mb-0">Welcome to the pixelfed debug site, this page helps pixelfed developers diagnose an issue by gathering some information about your browser, internet connection and connectivity to a pixelfed instance.</p>
+
+		<p class="lead text-muted pb-3">We do not collect IP addresses or other personal information.</p>
+
+		<ul class="pb-3">
+			<li>
+				<span class="font-weight-bold">Step 1:</span>
+				<span>Enter the instance URL you are having issues with.</span>
+			</li>
+			<li>
+				<span class="font-weight-bold">Step 2:</span>
+				<span>Click the generate report button.</span>
+			</li>
+			<li>
+				<span class="font-weight-bold">Step 3:</span>
+				<span>Copy and paste the debug info into a GitHub issue or support request.</span>
+			</li>
+		</ul>
+
+		<div class="bg-light p-3">
+			<form id="instanceForm">
+				<div class="form-group">
+					<label for="instanceInput">Instance URL</label>
+					<input type="text" class="form-control" id="instanceInput" aria-describedby="instanceInput" placeholder="https://pixelfed.social" autocomplete="off">
+				</div>
+				<div class="form-group">
+					<label for="instanceIssue">Explain your issue</label>
+					<textarea class="form-control" rows="4" id="instanceIssue" placeholder="Explain the issue you are having here, be as descriptive as possible."></textarea>
+				</div>
+				<button type="submit" class="btn btn-primary disabled" disabled="">Generate Report</button>
+			</form>
+		</div>
+
+		<hr class="my-5">
+		<div class="results">
+			<p class="h4">Copy this data:</p>
+			<div class="my-3" id="pasteCollapse">
+				<div class="card card-body bg-light">
+					
+				</div>
+			</div>
+			<div class="row py-5">
+				<div class="col-12 col-md-8">
+					<h4 class="font-weight-bold">Browser Info</h4>
+					<p class="mb-0"><span class="font-weight-bold">Version:</span> <span class="browser-version">Loading ...</span></p>
+					<p class="mb-0"><span class="font-weight-bold">Language:</span> <span class="browser-language">Loading ...</span></p>
+					<p class="mb-0"><span class="font-weight-bold">Platform:</span> <span class="browser-platform">Loading ...</span></p>
+					<p class="mb-0"><span class="font-weight-bold">Product:</span> <span class="browser-product">Loading ...</span></p>
+					<p class="mb-0"><span class="font-weight-bold">User Agent:</span> <span class="browser-ua">Loading ...</span></p>
+					<hr>
+					<h4 class="font-weight-bold">Response Headers</h4>
+					<div class="response-headers"></div>
+				</div>
+				<div class="col-12 col-md-4">
+					<div class="card">
+						<div class="card-header font-weight-bold bg-light">
+							Instance
+						</div>
+						<div class="card-body">
+							<div class="instance-card">
+								<div class="text-center font-weight-light">Waiting for instance report ...</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="/assets/main.js"></script>
+</body>
+</html>
