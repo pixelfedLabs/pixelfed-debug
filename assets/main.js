@@ -88,8 +88,8 @@ function init() {
 	instanceForm();
 }
 
-heartbeat();
+init();
 
 setInterval(function() {
-	heartbeat();
+	init();
 }, 5000);
